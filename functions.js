@@ -129,9 +129,11 @@ function relatedBooks(bookId, authors, books) {
     (author) =>
       (titles = titles.concat(titlesByAuthorName(author.name, authors, books)))
   );
-  return titles;
+
+  let uniqueBooks = [...new Set(titles)];
+  return uniqueBooks;
 }
-console.log(relatedBooks(50, authors, books));
+console.log(relatedBooks(53, authors, books));
 
 /**************************************************************
  * friendliestAuthor(authors):
